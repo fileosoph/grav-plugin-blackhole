@@ -73,13 +73,19 @@ bin/plugin blackhole generate http://localhost/grav
 
 - **Strip Port** `--strip-port`
   option, integer
-  If use in combination with a Docker and port-mapping and assets will not be copied to output, try to strip the port 
+  If use in combination with a Docker and port-mapping and assets will not be copied to output, try to strip the port. 
    ```bash
   --strip-port 8080
    ```
 
+## Troubleshooting/ Security
+
 :bangbang: | [security or not-working blackhole php `shell_exec`](/doc/php-shell-exec-security-en.md) 
 :---: | :---
+
+## Docs/Tutorial
+
+* [Grav as SSG from docker-compose(draft)](/grav-as-static-site-generator-ssg-with-docker.mdd)
 
 ## Author
 

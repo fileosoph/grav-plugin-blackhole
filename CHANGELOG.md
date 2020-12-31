@@ -4,8 +4,10 @@
 1.  [](#improved)
     * (Fileosoph) code reformatted
     * (Fileosoph) verbose mode more detailed
-1. [](#bugfix)
-    * Fix [#1](https://github.com/fileosoph/grav-plugin-blackhole/issues/1)
+1. [](#new)
+    * Create --strip-port [#1](https://github.com/fileosoph/grav-plugin-blackhole/issues/1)
+    * Draft-Tutorial Grav as SSG (static site generator) such as jekyll with your own docker-compose
+    
     
 # v1.0.0-beta.3
 ## 10/30/2020
