@@ -85,7 +85,7 @@ bin/plugin blackhole generate http://localhost/grav
 
 ## Docs/Tutorial
 
-* [Grav as SSG from docker-compose(draft)](/grav-as-static-site-generator-ssg-with-docker.mdd)
+* [Grav as SSG from docker-compose(draft)](/doc/grav-as-static-site-generator-ssg-with-docker.mdd)
 
 ## Author
 
