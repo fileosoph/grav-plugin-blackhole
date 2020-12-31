@@ -76,8 +76,11 @@ bin/plugin blackhole generate http://localhost/grav
   If use in combination with a Docker and port-mapping and assets will not be copied to output, try to strip the port 
    ```bash
   --strip-port 8080
-  ```
-  
+   ```
+
+:bangbang: | [security or not-working blackhole php `shell_exec`](/doc/php-shell-exec-security-en.md) 
+:---: | :---
+
 ## Author
 
 <table>
