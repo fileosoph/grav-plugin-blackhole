@@ -1,4 +1,6 @@
 # v1.0.0-beta.5
+## 01/03/2021
+
 1. [](#new)
     * Absolute Urls in will be parsed to the new Url http://127.0.0.1:8080/feed.rss to https://myTarget.com/feed.rss
 2. [](#improved)
