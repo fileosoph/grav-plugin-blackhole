@@ -2,9 +2,9 @@
 ## 01/03/2021
 
 1. [](#new)
-    * Absolute Urls in will be parsed to the new Url http://127.0.0.1:8080/feed.rss to https://myTarget.com/feed.rss
+    * (Fileosoph) Absolute Urls in will be parsed to the new Url http://127.0.0.1:8080/feed.rss to https://myTarget.com/feed.rss
 2. [](#improved)
-    * function array_flatten() with legendary https://davidwalsh.name/flatten-nested-arrays-php 
+    * (Fileosoph) function array_flatten() with legendary https://davidwalsh.name/flatten-nested-arrays-php 
 
 # v1.0.0-beta.4
 ## 12/31/2020
@@ -13,8 +13,8 @@
     * (Fileosoph) code reformatted
     * (Fileosoph) verbose mode more detailed
 1. [](#new)
-    * Create --strip-port [#1](https://github.com/fileosoph/grav-plugin-blackhole/issues/1)
-    * Draft-Tutorial Grav as SSG (static site generator) such as jekyll with your own docker-compose
+    * (Fileosoph) Create --strip-port [#1](https://github.com/fileosoph/grav-plugin-blackhole/issues/1)
+    * (Fileosoph) Draft-Tutorial Grav as SSG (static site generator) such as jekyll with your own docker-compose
     
     
 # v1.0.0-beta.3
