@@ -1,3 +1,9 @@
+# v1.0.0-beta.5
+1. [](#new)
+    * Absolute Urls in will be parsed to the new Url http://127.0.0.1:8080/feed.rss to https://myTarget.com/feed.rss
+2. [](#improved)
+    * function array_flatten() with legendary https://davidwalsh.name/flatten-nested-arrays-php 
+
 # v1.0.0-beta.4
 ## 12/31/2020
 

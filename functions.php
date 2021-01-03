@@ -1,26 +1,31 @@
 <?php declare(strict_types=1);
 
-// flatten a multidimensional array
-function array_flatten($array = null)
+/**
+ * More elegant way to recurse the array for this purposes
+ *
+ * @param array $array
+ * @param array $return
+ *
+ * @return array
+ * @see    https://davidwalsh.name/flatten-nested-arrays-php
+ * @since  v1.0.0-beta.5
+ */
+function array_flatten(array $array, array $return): array
 {
-	$result = [];
-	if (!is_array($array))
+	$x = 0;
+	for ($x, $xMax = count($array); $x <= $xMax; $x ++)
 	{
-		$array = func_get_args();
-	}
-	foreach ($array as $key => $value)
-	{
-		if (is_array($value))
+		if (is_array($array[$x]))
 		{
-			$result = array_merge($result, array_flatten($value));
+			$return = array_flatten($array[$x], $return);
 		}
-		else
+		elseif (isset($array[$x]))
 		{
-			$result = array_merge($result, [$key => $value]);
+			$return[] = $array[$x];
 		}
 	}
 
-	return $result;
+	return $return;
 }
 
 // curl
@@ -49,8 +54,9 @@ function portal($in, $out, $content)
 }
 
 // get links to assets
-function tidal_disruption($data, $elements, $attribute)
+function tidal_disruption($data, $elements, $attribute): array
 {
+
 	$doc = new \DOMDocument();
 	@$doc->loadHTML($data);
 	$links = [];
@@ -117,7 +123,10 @@ function assets($that, $event_horizon, $input_url, $data, $force, $verbose)
 	$asset_links[]   = tidal_disruption($data, 'script', 'src');
 	$asset_links[]   = tidal_disruption($data, 'img', 'src');
 	$input_url_parts = parse_url($input_url);
-	foreach (array_flatten($asset_links) as $asset)
+
+	// echo 'input_url: ' . $input_url . PHP_EOL;
+
+	foreach (array_flatten($asset_links, []) as $asset)
 	{
 		if (
 		    strpos($asset, 'data:') !== 0 && // exclude data URIs
@@ -168,6 +177,16 @@ function assets($that, $event_horizon, $input_url, $data, $force, $verbose)
 						break;
 				}
 				// asset doesn't exist
+			}
+			elseif (false !== stripos($asset, $input_url, 0))
+			{
+				/**
+				 * @since  v1.0.0-beta.5
+				 *         <link rel="alternate" type="application/rss+xml" href="http://127.0.0.1:8080/feed.rss" title="RSS Feed">
+				 *         <link rel="alternate" type="application/rss+xml" href="{{--output-url}}/feed.rss" title="RSS Feed">
+				 */
+				$newAsset = str_replace($input_url, '', $asset);
+				str_replace($asset, $newAsset, $data);
 			}
 			else
 			{
